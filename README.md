@@ -195,24 +195,31 @@ Conference-Ready Demo: Pre-configured demonstration scenarios
 │              (Local or Cloud - RDS/Aurora)               │
 └────────────────────────┬────────────────────────────────┘
                          │
+
+                         
                          ▼
               ┌──────────────────────┐
               │   MCP Server         │
               │  (Database Bridge)   │
               └──────────┬───────────┘
+
+              
                          │
          ┌───────────────┼───────────────┐
-         │               │               │
+         │         
+         │               │
          ▼               ▼               ▼
 ┌────────────────┐ ┌────────────┐ ┌────────────────┐
 │ Health Check   │ │ Supervisor │ │ Action Agent   │
 │ Agent          │─│   Agent    │─│                │
-│                │ │            │ │                │
+│                │ 
+│            │ │                │
 │ • Monitors DB  │ │ • Analyzes │ │ • Executes     │
 │ • Detects      │ │ • Decides  │ │   Fixes        │
 │   Issues       │ │ • Instructs│ │ • Validates    │
 └────────────────┘ └────────────┘ └────────────────┘
-         │               │               │
+         │               │  
+         │
          └───────────────┼───────────────┘
                          │
                          ▼
@@ -469,67 +476,7 @@ python main.py --interactive
 
 
 
-🔒 Security Best Practices
 
-.gitignore Configuration
-
-Your repository is configured to exclude sensitive information from version control:
-
-✅ Protected (Never Committed):
-
-
-
-
-
-Virtual environments (venv/)
-
-
-
-Environment variables (.env)
-
-
-
-Database credentials
-
-
-
-AWS credentials and tokens
-
-
-
-Python cache files (__pycache__/, *.pyc, *.pyo)
-
-
-
-IDE configurations (.vscode/, .idea/, .DS_Store)
-
-
-
-Log files (*.log, logs/)
-
-
-
-Temporary files (*.tmp, *.bak)
-
-✅ Included (Safe Templates):
-
-
-
-
-
-.env.example - Template without actual credentials
-
-
-
-requirements.txt - Python dependencies
-
-
-
-Source code and documentation
-
-Credential Management Best Practices
-
-For Development:
 
 # Use environment variables
 export DB_PASSWORD="[PASSWORD]"
@@ -546,30 +493,6 @@ aws secretsmanager create-secret \
 aws secretsmanager get-secret-value \
   --secret-id autonomous-dba/credentials
 
-Security Checklist:
-
-
-
-
-
-✅ Never commit .env files
-
-
-
-✅ Rotate credentials regularly
-
-
-
-✅ Use least-privilege IAM policies
-
-
-
-✅ Enable AWS CloudTrail for audit logging
-
-
-
-✅ Review .gitignore before each commit
-
 
 
 🔧 How It Works
@@ -582,7 +505,7 @@ The system operates in continuous monitoring cycles:
 
 
 
-Health Check Phase (every 30 seconds by default)
+Health Check Phase (every 60 seconds by default)
 
 
 
