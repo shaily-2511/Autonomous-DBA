@@ -303,20 +303,20 @@ Sufficient service quotas for model invocations
 
 
 
-🚀 Installation
+🚀 **Installation**
 
-For Testers/Customers
+**For Testers/Customers**
 
 Follow these steps to set up the Autonomous DBA demo on your machine:
 
-1. Clone the Repository
+**1. Clone the Repository**
 
 git clone https://github.com/shaily-2511/Autonomous-DBA.git
 cd Autonomous-DBA
 
-2. Set Up Python Virtual Environment
+**2. Set Up Python Virtual Environment**
 
-# Create virtual environment
+#Create virtual Env
 python3 -m venv venv
 
 # Activate virtual environment
@@ -333,15 +333,15 @@ Expected output:
 
 Successfully installed boto3-1.x.x botocore-1.x.x psycopg2-2.x.x ...
 
-3. Verify Installation
+**3. Verify Installation**
 
 python --version  # Should show Python 3.8+
 pip list          # Verify all packages installed
 
 
 
-⚙️ Configuration
-
+**⚙️ Configuration
+**
 1. Copy Environment Template
 
 cp .env.example .env
@@ -369,27 +369,26 @@ ALERT_THRESHOLD=75                  # Performance threshold (percentage)
 AUTO_REMEDIATION=true               # Enable automatic fixes (set false for manual approval)
 LOG_LEVEL=INFO                      # Logging verbosity (DEBUG, INFO, WARN, ERROR)
 
-Important Notes:
+**Important Notes:**
 
 
 
 
-
-For local PostgreSQL: Use localhost as DB_HOST
-
-
-
-For AWS RDS/Aurora: Use your database endpoint (e.g., mydb.abc123.us-east-1.rds.amazonaws.com)
+a. For local PostgreSQL: Use localhost as DB_HOST
 
 
 
-Ensure your AWS credentials have bedrock:InvokeModel permissions
+b. For AWS RDS/Aurora: Use your database endpoint (e.g., mydb.abc123.us-east-1.rds.amazonaws.com)
+
+
+
+c. Ensure your AWS credentials have bedrock:InvokeModel permissions
 
 
 
 Start with AUTO_REMEDIATION=false for initial testing
 
-3. Database Setup (Optional)
+**3. Database Setup (Optional)**
 
 Create a dedicated monitoring user with appropriate privileges:
 
@@ -410,7 +409,7 @@ GRANT CREATE ON SCHEMA public TO dba_agent;
 
 
 
-🎮 Running the Demo
+**🎮 Running the Demo**
 
 Quick Start
 
@@ -420,8 +419,7 @@ source venv/bin/activate  # or venv\Scripts\activate on Windows
 # Run the complete demo
 ./demo/run_demo.sh
 
-Expected Demo Flow:
-
+**Expected Demo Flow:**
 
 
 
@@ -448,7 +446,7 @@ Action Agent executes remediation
 
 System confirms health restoration
 
-Running Individual Components
+**Running Individual Components**
 
 # Start Health Check Agent only
 python src/agents/health_check_agent.py
@@ -461,20 +459,6 @@ python src/agents/action_agent.py
 
 # Run complete orchestration
 python main.py
-
-Interactive Mode
-
-# Launch interactive console
-python main.py --interactive
-
-# Available commands:
-# - status: Check current database health
-# - analyze: Run health analysis
-# - remediate: Execute remediation actions
-# - history: View action history
-# - exit: Quit interactive mode
-
-
 
 
 
@@ -642,6 +626,9 @@ Real-World DBA Automation: Practical applications of AI in database administrati
 📧 Contact
 
 Author: Shaily Porwal
+
 Email: shaily.porwal@gmail.com
-GitHub: @shaily-2511
+
+GitHub: [@shaily-2511](https://github.com/shaily-2511)
+
 Conference: PostgreSQL Conference 2026
