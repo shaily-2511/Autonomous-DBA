@@ -1,0 +1,14 @@
+json
+{
+  "mcpServers": {
+    "postgres": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-postgres",
+        "--connection-string",
+        "postgresql://dba_agent:[PASSWORD]!@localhost:5432/autonomous_dba"
+      ]
+    }
+  }
+}
+
